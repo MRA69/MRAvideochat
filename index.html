@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="script.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <style>
+    body {
+      background: #0098ff;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .close-icon
+    {
+  display:block;
+  box-sizing:border-box;
+  width:40px;
+  height:40px;
+  margin-top: 370px;
+  margin-left: 750px;
+  border-width:3px;
+  border-style: solid;
+  border-color:red;
+  border-radius:100%;
+  background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, white 46%,  white 56%,transparent 56%, transparent 100%);
+  background-color:red;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  box-shadow:0px 0px 5px 2px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+   }
+    #localVideo{
+      background: white;
+      background-image: url("1.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 125px;
+      height: 90px;
+      top: 10px;
+      right: 20px;
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+      border-radius: 30px;
+      position: fixed;
+    }
+    #remoteVideo{
+      display: flex;
+      background: white;
+      background-image: url("1.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      box-sizing: border-box;
+      border-radius: 30px;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: fixed;
+    }
+    #localVideo1{
+      background: white;
+      background-image: url("1.jpg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 125px;
+      height: 90px;
+      top: 10px;
+      right: 20px;
+      box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2);
+      border-radius: 30px;
+      position: fixed;
+    }
+    #remoteVideo1{
+      display: flex;
+      background: white;
+      background-image: url("1.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      box-sizing: border-box;
+      border-radius: 30px;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      position: fixed;
+    }
+    
+    .copy {
+      position: fixed;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 18px;
+      color: white;
+    }
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 40px 90px 0px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+ .button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}   
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+} 
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+}   
+</style>
+</head>
+<body>
+  <video id="remoteVideo" autoplay></video>
+  <button onclick="enableMute1()" class="button button1" >Mute sound</button><br>
+  <button onclick="disableMute1()" class="button button2">Enable sound</button><br>
+  <button onclick="checkMute1()" class="button button3">Check muted status</button><br>
+  <button onclick="playPause1()" class="button button4">PAUSE/PLAY</button><br><br>
+  <video id="localVideo" autoplay muted></video>
+  <a href="javascript:close_window();" class="close-icon"></a>
+<script>
+var vid = document.getElementById("remoteVideo");
+var vid1 = document.getElementById("remoteVideo");
+function enableMute1() { 
+  vid.muted = true;
+} 
+
+function disableMute1() { 
+  vid.muted = false;
+} 
+function playPause1() { 
+  if (vid1.paused) 
+    vid1.play(); 
+  else 
+    vid1.pause(); 
+} 
+function checkMute1() { 
+  if(vid.muted===true)
+  {
+    alert("SOUND IS MUTED");
+  }
+  else
+    alert("SOUND IS ON");
+}
+function close_window()
+{
+  if(confirm("DO YOU WANT TO QUIT THE CHAT?"))
+  {
+  close();
+  }
+};
+</script> 
+</body>
+</html>
