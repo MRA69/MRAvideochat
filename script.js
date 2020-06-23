@@ -68,6 +68,7 @@ function startWebRTC(isOfferer) {
   // When a remote stream arrives display it in the #remoteVideo element
   pc.onaddstream = event => {
     remoteVideo.srcObject = event.stream;
+    remoteVideo1.srcObject = event.stream;
   };
   navigator.mediaDevices.getUserMedia({
     audio: true,
