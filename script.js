@@ -33,11 +33,11 @@ drone.on('open', error => {
   });
   // We're connected to the room and received an array of 'members'
   room.on('members', members => {
-    if (members.length >= 4) {
+    if (members.length >= 3) {
       return alert('The room is full');
     }
      // If we are the second user to connect to the room we will be creating the offer
-     const isOfferer = members.length === 3;
+     const isOfferer = members.length === 2;
      startWebRTC(isOfferer);
    });
  });
@@ -68,7 +68,6 @@ function startWebRTC(isOfferer) {
   // When a remote stream arrives display it in the #remoteVideo element
   pc.onaddstream = event => {
     remoteVideo.srcObject = event.stream;
-    remoteVideo1.srcObject = event.stream;
   };
   navigator.mediaDevices.getUserMedia({
     audio: true,
